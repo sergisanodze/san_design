@@ -86,26 +86,35 @@ a {
 }
 
 .btn {
-  display: block;
   width: 180px;
   height: 45px;
   background: #95662f;
   border-radius: 6px;
   text-align: center;
+
   display: flex;
   align-items: center;
   justify-content: center;
+
+  transition: 0.6s;
 }
 
 .btn:hover {
   background: #3f2607;
-  transition: 0.6s;
 }
 
 .hero-image {
   height: 500px;
   background: url("images/1.jpg") center / cover no-repeat;
   border-radius: 6px;
+  overflow: hidden;
+}
+
+.hero-image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
 }
 
 /* SECTIONS */
@@ -115,7 +124,7 @@ a {
 }
 
 .light {
-  background: #f5f5f5;
+  background: #ffffff;
   color: #24252a;
 }
 
@@ -147,11 +156,11 @@ a {
   content: "";
   flex: 1;
   height: 1px;
-  background: currentColor;
-  opacity: 0.75;
+  background: #999;
+  opacity: 1;
 }
 
-/* FURNITURE / RECOMMENDATIONS */
+/* FURNITURE */
 
 .cards {
   display: grid;
@@ -170,8 +179,17 @@ a {
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
+  
 }
 
+.card img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+/* თუ img არ გამოჩნდა, background ფოტოებიც იმუშავებს */
 .cards .card:nth-child(1) {
   background-image: url("images/2.jpg");
 }
@@ -185,7 +203,6 @@ a {
 }
 
 .small-btn {
-  display: block;
   width: 170px;
   height: 35px;
   background: #95662f;
@@ -194,11 +211,20 @@ a {
   left: 50%;
   bottom: 20px;
   transform: translateX(-50%);
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  color: #fff;
+  font-size: 15px;
+  font-weight: 700;
+
+  transition: 0.6s;
 }
 
 .small-btn:hover {
   background: #3f2607;
-  transition: 0.6s;
 }
 
 /* SERVICES / ADVANTAGES */
@@ -218,16 +244,176 @@ a {
   border-right: 1px solid rgba(255, 255, 255, 0.5);
 }
 
-/* RECOMMENDATIONS */
+/* SERVICES CARDS */
 
-.faded .card {
-  opacity: 0.35;
+.service-card {
+  padding: 28px 22px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 14px;
+  text-align: center;
+  transition: 0.5s;
 }
 
-.faded .card:nth-child(1),
-.faded .card:nth-child(2),
-.faded .card:nth-child(3) {
-  background-image: url("images/foni.jpg");
+.service-card h3 {
+  font-size: 24px;
+  color: #95662f;
+}
+
+.service-card p {
+  font-size: 16px;
+  line-height: 1.6;
+  color: #ddd;
+}
+
+.service-card:hover {
+  background: rgba(149, 102, 47, 0.15);
+}
+
+/* ADVANTAGES */
+
+.advantages {
+  gap: 24px;
+}
+
+.advantage-card {
+  min-height: 210px;
+  padding: 30px 24px;
+  border: 1px solid rgba(255, 255, 255, 0.5);
+  border-radius: 8px;
+  background: rgba(36, 37, 42, 0.55);
+  backdrop-filter: blur(3px);
+  text-align: center;
+
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 14px;
+
+  transition: 0.5s;
+}
+
+.advantage-card h3 {
+  font-size: 24px;
+  color: #d39a55;
+}
+
+.advantage-card p {
+  font-size: 16px;
+  line-height: 1.6;
+  color: #f1f1f1;
+}
+
+.advantage-card:hover {
+  background: rgba(149, 102, 47, 0.35);
+  transform: translateY(-6px);
+}
+
+/* RECOMMENDATIONS */
+
+.recommendations {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 24px;
+}
+
+.recommend-card {
+  min-height: 230px;
+  padding: 30px 24px;
+  border-radius: 8px;
+  background: rgba(255, 255, 255, 0.06);
+  border: 1px solid rgba(255, 255, 255, 0.18);
+  text-align: center;
+
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 14px;
+
+  transition: 0.5s;
+}
+
+.recommend-card p {
+  font-size: 16px;
+  line-height: 1.7;
+  color: #ddd;
+}
+
+.recommend-card h3 {
+  font-size: 22px;
+  color: #d39a55;
+  margin-top: 10px;
+}
+
+.recommend-card span {
+  font-size: 14px;
+  color: #aaa;
+}
+
+.recommend-card:hover {
+  background: rgba(149, 102, 47, 0.18);
+  transform: translateY(-6px);
+}
+
+/* REVIEW FORM */
+
+.review-form {
+  max-width: 520px;
+  margin: 45px auto 0;
+  padding: 28px 24px;
+  border-radius: 10px;
+  background: rgba(255, 255, 255, 0.06);
+  border: 1px solid rgba(255, 255, 255, 0.18);
+
+  display: grid;
+  gap: 14px;
+}
+
+.review-form h3 {
+  text-align: center;
+  font-size: 24px;
+  color: #d39a55;
+  margin-bottom: 8px;
+}
+
+.review-form input,
+.review-form textarea {
+  width: 100%;
+  padding: 13px 15px;
+  border-radius: 6px;
+  border: 1px solid #777;
+  background: transparent;
+  color: #fff;
+  font-size: 15px;
+  outline: none;
+}
+
+.review-form input::placeholder,
+.review-form textarea::placeholder {
+  color: #aaa;
+}
+
+.review-form input:focus,
+.review-form textarea:focus {
+  border-color: #d39a55;
+}
+
+.review-form button {
+  width: 180px;
+  height: 42px;
+  margin: 0 auto;
+  border: none;
+  border-radius: 6px;
+  background: #95662f;
+  color: #fff;
+  font-size: 16px;
+  cursor: pointer;
+  transition: 0.5s;
+}
+
+.review-form button:hover {
+  background: #3f2607;
 }
 
 /* CONTACT */
@@ -335,7 +521,44 @@ textarea {
 
   .feature {
     min-height: 100px;
-    border: 1px solid rgba(255, 255, 255, 0.4);
+    border: 1px solid rgba(255, 255, 255, 0.95);
+  }
+
+  .feature:last-child {
+    border-right: 1px solid rgba(255, 255, 255, 0.95);
+  }
+
+  .service-card {
+    min-height: 150px;
+  }
+
+  .advantage-card {
+    min-height: 160px;
+  }
+
+  .advantage-card:hover {
+    transform: none;
+  }
+
+  .recommendations {
+    grid-template-columns: 1fr;
+  }
+
+  .recommend-card {
+    min-height: 190px;
+  }
+
+  .recommend-card:hover {
+    transform: none;
+  }
+
+  .review-form {
+    max-width: 100%;
+    padding: 24px 18px;
+  }
+
+  .review-form button {
+    width: 100%;
   }
 
   .contact-form {
@@ -351,4 +574,6 @@ textarea {
   .socials {
     justify-content: center;
   }
+
+  
 }
