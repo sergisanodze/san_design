@@ -138,7 +138,7 @@ a {
       rgba(50, 30, 10, 0.35),
       rgba(50, 30, 10, 0.35)
     ),
-    url("images/foni.jpg") center / cover no-repeat;
+    url("images/sorrento.jpg") center / cover no-repeat;
 }
 
 .section-title {
@@ -444,6 +444,20 @@ textarea {
   border-radius: 6px;
   margin: 0 auto;
   cursor: pointer;
+
+  color: #fff;
+  font-size: 16px;
+
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  transition: 0.6s;
+}
+
+.form-btn:hover {
+  background: #3f2607;
 }
 
 /* FOOTER */
